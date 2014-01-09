@@ -20,8 +20,14 @@ while(has_sub_field("homepage_boxes")): ?>
             	setup_postdata( $post );
             	
             	$image = get_field('image');
+            	$link = "";
+            	if(get_field('link') == 'linktopage') {
+              	$link = get_field('page_link');
+            	}elseif(get_field('link') == 'linktourl'){
+              	$link = get_field('url_link');
+            	}
             	?>
-              <img src="<?php echo $image['sizes']['front-box-four']; ?>">
+              <a href="<?php echo $link;?>"><img src="<?php echo $image['sizes']['front-box-four']; ?>"></a>
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
   	      </div>
@@ -35,14 +41,23 @@ while(has_sub_field("homepage_boxes")): ?>
 				  <?php if( $post_object ): 
             	$post = $post_object;
             	setup_postdata( $post ); ?>
-          <?php $boxsize = get_field('box_size'); ?>
+          <?php $boxsize = get_field('box_size'); $imgsize = "";?>
   	      <?php 
-  	      if(get_field('box_size')=='small'){ echo('<div class="sm-box">'); }
-          elseif(get_field('box_size')=='half'){ echo('<div class="half-box">'); }
-          elseif(get_field('box_size')=='threefourths'){ echo('<div class="third-box">'); }
-          else echo("<div>"); ?>
+  	      if(get_field('box_size')=='small'){ echo('<div class="sm-box">'); $imgsize="front-box-one";}
+          elseif(get_field('box_size')=='half'){ echo('<div class="half-box">'); $imgsize="front-box-two";}
+          elseif(get_field('box_size')=='threefourths'){ echo('<div class="third-box">'); $imgsize="front-box-three";}
+          else echo("<div>"); 
+          
+          
+          $link = "";
+        	if(get_field('link') == 'linktopage') {
+          	$link = get_field('page_link');
+        	}elseif(get_field('link') == 'linktourl'){
+          	$link = get_field('url_link');
+        	}
+        	?>
             	<?php $image = get_field('image'); ?>
-              <img src="<?php echo $image['sizes']['front-box-four']; ?>">
+              <a href="<?php echo $link;?>"><img src="<?php echo $image['sizes'][$imgsize]; ?>"></a>
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
   	      </div>
@@ -55,13 +70,23 @@ while(has_sub_field("homepage_boxes")): ?>
           <?php if( $post_object ): 
             	$post = $post_object;
             	setup_postdata( $post ); ?>
-          <?php $boxsize = get_field('box_size'); ?>
-          <?php 
-          if(get_field('box_size')=='small'){ echo('<div class="sm-box">'); }
-          elseif(get_field('box_size')=='half'){ echo('<div class="half-box">'); }
-          else echo("<div>"); ?>
+          <?php $boxsize = get_field('box_size'); $imgsize = "";?>
+  	      <?php 
+  	      if(get_field('box_size')=='small'){ echo('<div class="sm-box">'); $imgsize="front-box-one";}
+          elseif(get_field('box_size')=='half'){ echo('<div class="half-box">'); $imgsize="front-box-two";}
+          else echo("<div>"); 
+          
+          
+          $link = "";
+        	if(get_field('link') == 'linktopage') {
+          	$link = get_field('page_link');
+        	}elseif(get_field('link') == 'linktourl'){
+          	$link = get_field('url_link');
+        	}
+        	?>
             	<?php $image = get_field('image'); ?>
-              <img src="<?php echo $image['sizes']['front-box-four']; ?>">
+              <a href="<?php echo $link;?>"><img src="<?php echo $image['sizes'][$imgsize]; ?>"></a>
+
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </div>
@@ -76,9 +101,16 @@ while(has_sub_field("homepage_boxes")): ?>
             	$post = $post_object;
             	setup_postdata( $post );
             	
-            	$image = get_field('image');
+            	 $link = "";
+            	if(get_field('link') == 'linktopage') {
+              	$link = get_field('page_link');
+            	}elseif(get_field('link') == 'linktourl'){
+              	$link = get_field('url_link');
+            	}
             	?>
-              <img src="<?php echo $image['sizes']['front-box-four']; ?>">
+            	<?php $image = get_field('image'); ?>
+              <a href="<?php echo $link;?>"><img src="<?php echo $image['sizes'][$imgsize]; ?>"></a>
+
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
   	      </div>
