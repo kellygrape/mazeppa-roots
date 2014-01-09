@@ -1,7 +1,6 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<div class="homepage">
 <?php get_template_part('templates/content', 'page'); ?>
-
-<div class="container homepage-boxes-area">
+<div class="homepage-boxes-area">
   <?php get_template_part('templates/homepage', 'boxes'); ?>
 </div>
-
+</div>

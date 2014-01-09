@@ -1,6 +1,7 @@
 // Readable 3.0.3
 // Variables
 // --------------------------------------------------
+@import url(http://fonts.googleapis.com/css?family=BenchNine:300,400,700|Voltaire|Oswald);
 
 
 // Global values
@@ -39,7 +40,7 @@
 // Typography
 // -------------------------
 
-@font-family-sans-serif:  "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Oswald", "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-serif;
@@ -59,7 +60,7 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
 @headings-font-family:    @font-family-sans-serif;
-@headings-font-weight:    bold;
+@headings-font-weight:    normal;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -267,12 +268,12 @@
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
 @navbar-default-color:             @text-color;
-@navbar-default-bg:                @body-bg;
+@navbar-default-bg:                @brand-primary;
 @navbar-default-border:            transparent;
 
 // Navbar links
-@navbar-default-link-color:                @link-color;
-@navbar-default-link-hover-color:          @link-hover-color;
+@navbar-default-link-color:                #FFF;
+@navbar-default-link-hover-color:          lighten(@brand-primary,30%);
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         @navbar-default-link-color;
 @navbar-default-link-active-bg:            transparent;
@@ -293,28 +294,28 @@
 // Inverted navbar
 //
 // Reset inverted navbar basics
-@navbar-inverse-color:                      @gray-light;
-@navbar-inverse-bg:                         @text-color;
+@navbar-inverse-color:                      @text-color;
+@navbar-inverse-bg:                         #FFF;
 @navbar-inverse-border:                     transparent;
 
 // Inverted navbar links
-@navbar-inverse-link-color:                 @gray-light;
-@navbar-inverse-link-hover-color:           #fff;
+@navbar-inverse-link-color:                 #FFF;
+@navbar-inverse-link-hover-color:           lighten(@brand-primary,30%);
 @navbar-inverse-link-hover-bg:              transparent;
-@navbar-inverse-link-active-color:          @navbar-inverse-link-color;
+@navbar-inverse-link-active-color:          @navbar-default-link-color;
 @navbar-inverse-link-active-bg:             transparent;
-@navbar-inverse-link-disabled-color:        #ccc;
+@navbar-inverse-link-disabled-color:        #333;
 @navbar-inverse-link-disabled-bg:           transparent;
 
 // Inverted navbar brand label
-@navbar-inverse-brand-color:                @navbar-inverse-link-color;
+@navbar-inverse-brand-color:                @navbar-default-link-color;
 @navbar-inverse-brand-hover-color:          #fff;
 @navbar-inverse-brand-hover-bg:             transparent;
 
 // Inverted navbar toggle
-@navbar-inverse-toggle-hover-bg:            #333;
-@navbar-inverse-toggle-icon-bar-bg:         #fff;
-@navbar-inverse-toggle-border-color:        #333;
+@navbar-inverse-toggle-hover-bg:            #ddd;
+@navbar-inverse-toggle-icon-bar-bg:         #ccc;
+@navbar-inverse-toggle-border-color:        #ddd;
 
 
 // Navs

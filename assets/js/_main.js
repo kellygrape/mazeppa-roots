@@ -1,7 +1,7 @@
 // Modified http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/
 // Only fires on body class (working off strictly WordPress body_class)
 
-var ExampleSite = {
+var MazeppaSite = {
   // All pages
   common: {
     init: function() {
@@ -12,7 +12,9 @@ var ExampleSite = {
   // Home page
   home: {
     init: function() {
-      // JS here
+      $('.carousel').carousel({
+        interval: 8000
+      });
     }
   },
   // About page
@@ -25,7 +27,7 @@ var ExampleSite = {
 
 var UTIL = {
   fire: function(func, funcname, args) {
-    var namespace = ExampleSite;
+    var namespace = MazeppaSite;
     funcname = (funcname === undefined) ? 'init' : funcname;
     if (func !== '' && namespace[func] && typeof namespace[func][funcname] === 'function') {
       namespace[func][funcname](args);

@@ -121,7 +121,8 @@
 }
 
 // Transitions
-.transition(@transition) {
+.transition(@transition,...) {
+  @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
   -webkit-transition: @transition;
           transition: @transition;
 }

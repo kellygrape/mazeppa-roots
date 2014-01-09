@@ -3,37 +3,159 @@
  */
 
 @import "bootstrap/bootstrap.less";
-
+@import "bootstrap/mixins.less";
 /* ==========================================================================
    Base
    ========================================================================== */
 
-body { }
+body { 
+  background-color: @brand-primary;
+  &.media{margin-top:0;} // auto .media margin from bootstrap
+}
+img{
+  .img-responsive();
+}
 
-
-
+.underlined-text{
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 8px solid @brand-primary;
+  padding: 10px;
+}
 /* ==========================================================================
    Header
    ========================================================================== */
 
-.banner { }
+.banner {
+  border-top: 5px solid @brand-primary;
+  nav{
+    background-color: @brand-primary;
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  @media (min-width: @screen-sm-min){
+    &.inner-page nav{
+      width:75%;
+      .pull-right();
+    }
+    &.inner-page .navbar-header{
+      width:25%;
+      .pull-left();
+    }
+  }
+  
+  &.navbar{
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-brand{
+    max-width:200px;
+    @media (min-width: @screen-sm-min){
+      max-width:270px;
+    }
+    
+  }
+}
 
+.navigation-row{
+  background-color:@brand-primary;
+  a{
+    color:white;
+  }
+}
+
+
+.home{
+  body&{
+    border-top: 5px solid @brand-primary;
+    background-color:black;
+  }
+  .banner{
+    @media (min-width: @screen-sm-min){
+      margin-top:100px;
+    }
+    @media (min-width: @screen-md-min){
+      margin-top:200px;
+    }
+    @media (min-width: @screen-lg-min){
+      margin-top:300px;
+    }
+  }
+  .content{
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjMwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,1) 30%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsla(0,0%,0%,0)), color-stop(30%,hsla(0,0%,0%,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, hsla(0,0%,0%,0) 0%,hsla(0,0%,0%,1) 30%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, hsla(0,0%,0%,0) 0%,hsla(0,0%,0%,1) 30%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, hsla(0,0%,0%,0) 0%,hsla(0,0%,0%,1) 30%); /* IE10+ */
+    background: linear-gradient(to bottom, hsla(0,0%,0%,0) 0%,hsla(0,0%,0%,1) 30%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
+  }
+}
 
 
 /* ==========================================================================
    Content
    ========================================================================== */
 
-.content { }
+.content {
+  background-color:white;
+}
 
+
+.production{
+  background-color:black;
+  .banner.navbar-inverse{
+    background-color:transparent;
+    @media (min-width: @screen-sm-min){
+      margin-bottom:225px;
+    }
+  }
+  
+  .home-carousel{
+    @media (min-width: @screen-sm-min){
+      top:100px;
+    }
+    @media (min-width: @screen-md-min){
+      top:50px;
+    }
+  }
+  .wrap{
+    
+  }
+}
 
 
 /* ==========================================================================
    Primary Content
    ========================================================================== */
 
-.main { }
-
+.page .main {
+  padding:10px 40px;
+  @media (min-width: @screen-md-min){
+    padding:30px 120px;
+  }
+  
+  h1{
+    .underlined-text();
+    @media (min-width: @screen-md-min){
+      margin-left: -50px;
+      margin-right: -50px;
+    }
+    margin-bottom: 22px;
+  }
+  p{
+    .clearfix();
+  }
+}
+.blog .main{
+  padding: 0px 20px;
+}
 /* Gallery Shortcode */
 .gallery-row { padding: 15px 0; }
 
@@ -43,7 +165,45 @@ body { }
    Sidebar
    ========================================================================== */
 
-.sidebar { }
+.sidebar {
+  margin-top:44px;
+}
+.widget{
+  margin-bottom:15px; 
+}
+.widget h3{
+  .underlined-text();
+  @media (min-width: @screen-sm-min){
+    margin: auto 40px;
+  }
+  font-size: 1.25em;
+  margin-bottom:10px;
+}
+.widget ul{
+  list-style: none;
+  padding:0;
+  margin:0;
+  li{
+    display:block;
+    border-bottom: 1px solid #DDD;
+  }
+  li a, li.recentcomments{
+    display: block;
+    padding: 5px 10px;
+    background:transparent;
+    text-decoration:none;
+    .transition(color 200ms, background 200ms);
+  }
+  li.recentcomments a {
+    display: inline;
+    padding: 0;
+    margin: 0;
+  }
+  li a:hover{
+    background:lighten(@brand-primary,30%);
+    //color:white;
+  }  
+}
 
 
 
@@ -51,14 +211,112 @@ body { }
    Posts
    ========================================================================== */
 
-.hentry header { }
+.hentry header {
+  h1{
+    color:black;
+  }
+}
+.hentry{
+  time, .byline{
+    display:inline-block;
+    font-size:.85em;
+    color:@gray-light;
+  }
+}
+
 .hentry time { }
 .hentry .byline { }
 .hentry .entry-content { }
-.hentry footer { }
+.hentry footer { 
+  border-bottom: 4px double #eee;
+  padding: 10px;
+  margin-bottom: 50px;
+  &:extend(.clearfix all);
+}
 
+// The Blog list
+  article .entry-title {
+    .underlined-text();
+    &h2{font-size: 1.5em; }
+    text-align: left;
+    font-weight:bold;
+    padding-left: 0;
+    a{
+      color: @text-color;
+      .transition(color 200ms);
+      
+      &:hover{
+        color: @brand-primary;
+      }
+    }
+  }
 
+/* ==========================================================================
+   Specific Modules
+   ========================================================================== */
+.home-carousel{
+  
+  
+  
+  @media (min-width: @screen-sm-min){
+    left:50%;
+    margin-left: -375px;
+    position: absolute;
+    top: 0;
+    z-index: -5;
+    top:0;
+  }
+  @media (min-width: @screen-md-min){
+    margin-left: -485px;
+  }
+  @media (min-width: @screen-lg-min){
+    margin-left: -585px;
+  }
+  
+  
+  .carousel .item {
+    .transition(opacity .75s);
+  }
+  .carousel .active.left {left:0;opacity:0;z-index:2;}
+  .carousel .next {left:0;opacity:1;z-index:1;}
+}
+.homepage-boxes-area{
+  @homepagegutter : 10px;
+  @media (min-width: 1200px){
+    width: 970px;
+  }
+  .homepage-box-row{
+    .make-row(@homepagegutter);
+    @media (min-width: @screen-sm-min) {
+      margin-top:10px;
+      margin-bottom: 10px;
+    }
+  }
+  img{
+    .img-responsive();
+    @media (max-width: @screen-sm-min) {
+      width: 100%;
+      height: auto;
+      padding: 5px 0;
+    }
+  }
+  .sm-box{
+    .make-sm-column(3; @homepagegutter);
+  }
+  .half-box{
+    .make-sm-column(6; @homepagegutter);
+  }
+  .third-box{
+    .make-sm-column(9; @homepagegutter);
+  }
+  .full-box{
+    .make-sm-column(12; @homepagegutter);
+  } 
+}
 
+a.big-button{
+  font-family: 'Oswald', sans-serif;
+}
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -73,8 +331,8 @@ body { }
    ========================================================================== */
 
 .aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
-.alignright { float: right; }
+.alignleft { float: left; margin-right:5px; }
+.alignright { float: right; margin-left:5px; }
 figure.alignnone { margin-left: 0; margin-right: 0; }
 
 
