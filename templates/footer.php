@@ -2,29 +2,8 @@
   <div class="container">
     <div class="row">
       <?php dynamic_sidebar('footer-left'); ?>
-      <div class="col-md-4">
-        <?php dynamic_sidebar('footer-center'); ?>
-      </div>
-      <div class="col-md-4">
-        <div class="widget social-buttons">
-        <div class="widget-header">
-          <h3>Connect with us</h3>
-        </div>
-          <a href="https://www.facebook.com/mazeppaprod">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-          <a href="https://twitter.com/mazeppaprod">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
+      <?php dynamic_sidebar('footer-center'); ?>
+      <?php dynamic_sidebar('footer-right'); ?>        
     </div>
   </div>
 </section>
