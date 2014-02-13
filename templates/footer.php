@@ -9,7 +9,9 @@
       </div>
       <div class="col-md-4">
         <div class="widget social-buttons">
-        <h3>Connect with us</h3>
+        <div class="widget-header">
+          <h3>Connect with us</h3>
+        </div>
           <a href="https://www.facebook.com/mazeppaprod">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
