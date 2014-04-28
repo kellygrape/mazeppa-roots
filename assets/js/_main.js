@@ -5,7 +5,7 @@ var MazeppaSite = {
   // All pages
   common: {
     init: function() {
-      // JS here
+      $('body.media').removeClass('media');
     },
     finalize: function() { }
   },
