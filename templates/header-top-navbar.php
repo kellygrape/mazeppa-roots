@@ -5,6 +5,21 @@
     <div class="col-sm-3">
       <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mazeppalogo-white-400px.png" alt="mazeppalogo-white" /></a>
     </div>
+    <div class="col-sm-9 social-buttons">
+	  <span class="pull-right">
+	    <a href="https://www.facebook.com/mazeppaprod"><span class="fa-stack fa-lg">
+		  <i class="fa fa-circle fa-stack-2x"></i>
+		  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+      </span></a>
+      <a href="https://twitter.com/mazeppaprod"><span class="fa-stack fa-lg">
+		  <i class="fa fa-circle fa-stack-2x"></i>
+		  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a>
+		  <a href="http://instagram.com/mazeppaprod"><span class="fa-stack fa-lg">
+		  <i class="fa fa-circle fa-stack-2x"></i>
+		  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></a>
+		  
+	  </span>
+    </div>
   </div>
 </div>
 

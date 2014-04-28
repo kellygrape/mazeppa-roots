@@ -11,7 +11,7 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'c82b63be4b3f02211210fe4703e47be4');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'd3e1f14927e786b96c3df684d75be932');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -58,7 +58,7 @@ function roots_google_analytics() { ?>
   e=o.createElement(i);r=o.getElementsByTagName(i)[0];
   e.src='//www.google-analytics.com/analytics.js';
   r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>');ga('send','pageview');
+  ga('create','<?php echo GOOGLE_ANALYTICS_ID; ?>');ga('require', 'linkid', 'linkid.js');ga('send','pageview');
 </script>
 
 <?php }
