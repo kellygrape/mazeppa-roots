@@ -25,7 +25,7 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Left Footer', 'roots'),
     'id'            => 'footer-left',
-    'before_widget' => '<section class="widget %1$s %2$s col-md-4"><div class="widget-inner">',
+    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
     'before_title'  => '<div class="widget-header"><h3>',
     'after_title'   => '</h3></div>',
@@ -34,7 +34,7 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Center Footer', 'roots'),
     'id'            => 'footer-center',
-    'before_widget' => '<section class="widget %1$s %2$s col-md-4"><div class="widget-inner">',
+    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
     'before_title'  => '<div class="widget-header"><h3>',
     'after_title'   => '</h3></div>',
@@ -43,11 +43,20 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Right Footer', 'roots'),
     'id'            => 'footer-right',
-    'before_widget' => '<section class="widget %1$s %2$s col-md-4"><div class="widget-inner">',
+    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
     'before_title'  => '<div class="widget-header"><h3>',
     'after_title'   => '</h3></div>',
   ));
+  register_sidebar(array(
+    'name'          => __('Sponsor Footer', 'roots'),
+    'id'            => 'sponsor-footer',
+    'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
+    'after_widget'  => '</div></section>',
+    'before_title'  => '<div class="widget-header"><h3>',
+    'after_title'   => '</h3></div>',
+  ));
+
 
   // Widgets
   register_widget('Roots_Vcard_Widget');

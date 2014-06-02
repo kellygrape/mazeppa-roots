@@ -14,3 +14,43 @@ License URI:        http://opensource.org/licenses/MIT
 .social-buttons{
 	padding-top:15px;
 }
+.production .home-carousel{
+  padding:0;
+}
+.home-carousel img{
+  width:100%;
+  height:auto;
+}
+
+
+@media (min-width: 768px) {
+  .production .banner.navbar-inverse {
+    margin-bottom: 225px;
+  }
+  .page .content{
+    min-height:500px;
+  }
+}
+
+@media (min-width: 992px) { 
+  .banner .nav>li>a {
+    padding: 7px 7px;
+  }
+  .production .banner.navbar-inverse {
+    margin-bottom: 170px;
+  }
+  .production .home-carousel{
+    margin-top:-45px;
+    padding:0;
+  }
+}
+
+@media (min-width: 1200px) { 
+  .banner .nav>li>a {
+    padding: 10px 15px;
+  }
+  .production .banner.navbar-inverse {
+    margin-bottom: 225px;
+  }
+}
+
