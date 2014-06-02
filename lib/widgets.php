@@ -50,7 +50,7 @@ function roots_widgets_init() {
   ));
   register_sidebar(array(
     'name'          => __('Sponsor Footer', 'roots'),
-    'id'            => 'sponsor-footer',
+    'id'            => 'sponsor-logos',
     'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
     'before_title'  => '<div class="widget-header"><h3>',
