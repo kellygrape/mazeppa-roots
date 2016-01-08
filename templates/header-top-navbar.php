@@ -1,6 +1,6 @@
 <?php if(is_front_page()): ?>
 
-<div class="container">
+<div class="container homepage-logo-area">
   <div class="logo-area row">
     <div class="col-sm-3">
       <a class="brand" href="<?php echo home_url(); ?>/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mazeppalogo-white-400px.png" alt="mazeppalogo-white" /></a>
@@ -43,6 +43,15 @@
     </nav>
 </header>
 
+
+<!--<div class="carousel-controls container">
+  <a class="left carousel-control" href="#homepage-carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#homepage-carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>-->
 <div class="home-carousel container">
 
   <?php 
@@ -51,20 +60,49 @@
   *  This example will create the Markup for Flexslider (http://www.woothemes.com/flexslider/)
   */
  
-  $images = get_field('homepage_gallery');
  
-  if( $images ): $i = 0;?>
-    <div id="homepage-carousel" class="carousel slide row" data-ride="carousel">
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <?php foreach( $images as $image ): ?>
-        <div class="item <?php if($i == 0){ echo 'active'; }?>">
-          <img src="<?php echo $image['sizes']['homepage-scroller']; ?>" alt="<?php echo $image['alt']; ?>">
-        </div>
-        <?php $i++; endforeach; ?>
+  if( have_rows('slider_item') ):
+  $i = 0; ?>
+	<div id="homepage-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+    <?php $i = 0; // reset after the first loop ?>
+    <?php while( have_rows('slider_item') ): the_row(); 
+    $i++;
+		// vars
+		$image = get_sub_field('slider_image');
+    
+    // figure out the link url
+    $linklocation = get_sub_field('slider_link_location');
+    $thelink = "#";
+    switch($linklocation){
+      case 'site':
+        $thelink = get_sub_field('slider_link_inner');
+        break;
+      case 'post':
+        $thelink = get_sub_field('slider_link_news');
+        break;
+      case 'outside':
+        $thelink = get_sub_field('slider_link_outside');
+        break;
+      case 'document':
+        $thelink = get_sub_field('upload_document');
+        $thelink = $thelink['url'];
+        break;
+    }
+
+		?>
+      <div class="item <?php if($i == 1){ echo 'active'; }?>">
+        <a href="<?php echo $thelink; ?>">
+        <img src="<?php echo $image['sizes']['homepage-scroller'] ?>" alt="<?php echo $image['alt']; ?>">
+        </a>
       </div>
+    <?php endwhile; ?>
+    
     </div>
-  <?php endif; ?>
+    
+	</div> 
+<?php endif; ?>
 </div>
 
 

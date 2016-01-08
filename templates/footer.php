@@ -11,7 +11,7 @@
     </div>
   </div>
 </section>
-<footer class="sponsor-footer container" role="contentinfo">
+<footer class="sponsor-footer container clearfix" role="contentinfo">
   <?php dynamic_sidebar('sponsor-logos'); ?>
 </footer>
 

@@ -64,11 +64,8 @@ img{
 
   
   .navbar-nav>li>a {
-    padding:10px 8px;
-    @media (min-width: @screen-md-min){
-      padding:10px 15px;
-    }
-
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .navbar-brand{
     max-width:200px;
@@ -323,7 +320,7 @@ img{
   }
   .sm-box{
   	.make-xs-column(6; @homepagegutter);
-    @media (min-width: @screen-sm-min) {.make-sm-column(3; @homepagegutter);}
+    .make-sm-column(3; @homepagegutter);
   }
   .half-box{
     .make-sm-column(6; @homepagegutter);
